@@ -1,0 +1,35 @@
+Ep 2 tinkercad intro+
+
+ Kode:
+ 
+ /*
+Mitt første blinky program med seriel komunikasjon
+skrevet av : dit navn
+dato er kjekt å ha: i dag
+
+dette er en enkel kode som får en LED på arduinoen til å blinke 
+med et tidsrom på 1000 millisekunder (1 sekund). samtidig så 
+sarter rogrammet med og si Hallo! og så etter en hver loop skriver den 
+Hei! i tillegg.
+
+med en komplimentær krets som en ekstern LED koblet til pinne 13 
+med en motsand og så koblet til jord(GND) får vi en ekstra LED til å blinke.
+
+*/
+
+void setup()				// Oppstarts blokken
+{						
+  pinMode(13, OUTPUT);		// Setter pinne 13 som utgangspinne
+  Serial.begin(9600);		// Starter serialovervåkning
+  Serial.println("Hallo!"); // Skriver Hallo! til PC'en din
+  
+}
+
+void loop()					// Hoved blokken
+{
+  digitalWrite(13, HIGH);	// Setter pinne 13 HØY
+  delay(1000); 				// Venter 1000 millisekunder
+  digitalWrite(13, LOW);	// Setter pinne 13 LAV
+  delay(1000); 				// Venter 1000 millisekunder
+  Serial.println("Hei!");	// Skriver Hei! til PC'en din
+}
